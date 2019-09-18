@@ -28,13 +28,24 @@ export default createGlobalStyle`
   }
 
   #wapper{
+    display: grid;
+
     @media only screen and (max-width: 468px) {
       grid-template-columns: 50px calc(100% - 50px);
+      grid-template-rows: 64px calc(100vh - 64px) ;
+      grid-template-areas:"logo logo"
+                          "aside main"
     }
-    display: grid;
+
     grid-template-columns: 180px calc(100% - 180px);
-    grid-template-rows: 100vh;
-    grid-template-areas: "aside main"
+    grid-template-rows: 0px 100vh ;
+    grid-template-areas:  "logo logo"
+                          "aside main"
+
+  }
+
+  #wapper-logo{
+    grid-area: logo;
 
   }
   #wapper-aside{
@@ -45,13 +56,17 @@ export default createGlobalStyle`
   #wapper-main{
     grid-area: main;
     display: grid;
+
+    @media screen and (min-width: 468px){
+      grid-template-rows:  64px auto 50px;
+    }
+
     grid-template-rows: 64px auto 50px;
-    grid-template-areas: "header"
-                         "main"
-                         "footer";
 
-
-
+    grid-template-areas:
+                          "header"
+                          "main"
+                          "footer";
 
   }
 

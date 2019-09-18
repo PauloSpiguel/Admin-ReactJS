@@ -17,18 +17,3 @@ export const Container = styled.aside`
   #aside {
   }
 `;
-
-export const Logo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: 'center';
-  height: 63px;
-  flex-shrink: 0;
-  background: #434c5b;
-
-  img {
-    cursor: pointer;
-    height: 70px;
-    padding: 15px;
-  }
-`;

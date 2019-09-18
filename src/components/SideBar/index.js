@@ -1,27 +1,17 @@
 import React from 'react';
-import { Divider } from '@material-ui/core';
-import ThemeSwitcher from './ThemeSwitcher';
-import { Container, Logo } from './styles';
+import { Container } from './styles';
 
 import ListMenu from './ListMenu';
 import DeepMenu from './DeepMenu';
 import SmallDeepMenu from './SmallDeepMenu';
-import logo from '../../assets/react.png';
+import Logo from './Logo';
 
-const Sidebar = () => (
+const Sidebar = props => (
   <>
     <Container>
-      <div id="logo">
-        <Divider />
-        <Logo>
-          <img alt="logo" src={logo} />
-        </Logo>
-        <Divider />
-        <ThemeSwitcher />
-        <Divider />
-      </div>
+      <Logo />
       <ListMenu />
-      <SmallDeepMenu />
+      {props.menu ? <DeepMenu /> : <SmallDeepMenu />}
     </Container>
   </>
 );

@@ -25,12 +25,23 @@ const Header = () => (
         </div>
       </nav>
       <aside>
-        {function teste() {
-          const menuActive = false;
-          if (!menuActive) {
-            return <h1>:</h1>;
-          }
-        }}
+        <nav id="navIcons">
+          <Badge badgeContent={1} color="primary">
+            <Link to="/forum">
+              <ForumIcon />
+            </Link>
+          </Badge>
+          <Badge badgeContent={5} color="primary">
+            <Link to="/forum">
+              <MailIcon />
+            </Link>
+          </Badge>
+          <Badge badgeContent={3} color="secondary">
+            <Link to="/forum">
+              <NotificationsIcon />
+            </Link>
+          </Badge>
+        </nav>
         <Profile>
           <div>
             <strong id="span">Paulo Spiguel</strong>

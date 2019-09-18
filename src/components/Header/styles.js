@@ -49,6 +49,17 @@ export const Content = styled.div`
   aside {
     display: flex;
     align-items: center;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        margin: 0 5px;
+        color: #fff;
+      }
+    }
   }
 `;
 
