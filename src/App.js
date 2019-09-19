@@ -13,29 +13,50 @@ import GlobalStyle from './styles/global';
 
 const handleScreen = () => {
   const screen = document.body.clientWidth;
-  console.log(screen);
-  return screen > 468;
+
+  return screen;
 };
 
-const App = () => (
-  <>
-    <Router>
-      <div id="wapper">
-        <div id="wapper-logo">
-          <Logo />
-        </div>
-        <div id="wapper-aside">
-          <SideBar menu={window.addEventListener('resize', handleScreen)} />
-        </div>
-        <div id="wapper-main">
-          <Header />
-          <Main />
-          <Footer />
-        </div>
-      </div>
-    </Router>
-    <GlobalStyle />
-  </>
-);
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-export default App;
+    this.state = {
+      screenWidth: false,
+      widgetWidth: false,
+    };
+  }
+
+  toggle = () => {
+    const screen = document.body.clientWidth;
+    this.setState({
+      screenWidth: screen > 613,
+      profileWidth: screen > 668,
+      widgetWidth: screen > 468,
+    });
+  };
+
+  render() {
+    window.onresize = this.toggle;
+    return (
+      <>
+        <Router>
+          <div id="wapper">
+            <div id="wapper-logo">
+              <Logo />
+            </div>
+            <div id="wapper-aside">
+              <SideBar menu={this.state.widgetWidth} />
+            </div>
+            <div id="wapper-main">
+              <Header menu={this.state} />
+              <Main />
+              <Footer />
+            </div>
+          </div>
+        </Router>
+        <GlobalStyle />
+      </>
+    );
+  }
+}

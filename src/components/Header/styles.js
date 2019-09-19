@@ -46,49 +46,4 @@ export const Content = styled.div`
       text-decoration: none;
     }
   }
-  aside {
-    display: flex;
-    align-items: center;
-
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      span {
-        margin: 0 5px;
-        color: #fff;
-      }
-    }
-  }
-`;
-
-export const Profile = styled.div`
-  display: flex;
-  margin-left: 20px;
-  padding-left: 20px;
-  border-left: 1px solid #eee;
-
-  div {
-    text-align: right;
-    margin-right: 10px;
-
-    strong {
-      display: block;
-      color: #333;
-    }
-
-    a {
-      display: block;
-      margin-top: 2px;
-      text-decoration: none;
-      font-size: 12px;
-      color: #999;
-    }
-  }
-
-  img {
-    height: 32px;
-    border-radius: 50%;
-  }
 `;
